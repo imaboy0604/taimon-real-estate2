@@ -1,45 +1,6 @@
-<script>
-  let menuOpen = false;
-
-  function toggleMenu() {
-    menuOpen = !menuOpen;
-  }
-</script>
-
 <section class="hero-section">
   <div class="overlay-top"></div>
   <div class="overlay-bottom"></div>
-
-  <nav class="navbar">
-    <div class="navbar-content">
-      <button class="menu-button" on:click={toggleMenu}>
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M2.5 5H17.5M2.5 10H17.5M2.5 15H17.5"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-        </svg>
-        <span>メニュー</span>
-      </button>
-
-      <div class="logo">
-        <img src="/images/logo2.jpg" alt="タイモン不動産" class="logo-image" />
-      </div>
-
-      <div class="nav-links">
-        <a href="#contact">お問い合わせ</a>
-        <a href="#about">私たちについて</a>
-      </div>
-    </div>
-  </nav>
 
   <div class="hero-content">
     <h1 class="hero-title">
@@ -67,6 +28,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
+    /* 既存画像を使用 - 写真がくっきり見えるように */
     background: url("/images/gallery-1.jpg") center/cover no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -75,6 +37,8 @@
     flex-direction: column;
     color: white;
     overflow: hidden;
+    /* ヘッダー分の余白を考慮 */
+    padding-top: 80px;
   }
 
   .overlay-top {
@@ -92,91 +56,56 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 120px;
+    background: white;
+    z-index: 2;
+    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+    animation: waveClip 10s ease-in-out infinite;
+  }
+  
+  /* 波打つようなアクション - clip-pathで波の形をアニメーション */
+  @keyframes waveClip {
+    0%, 100% {
+      clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    25% {
+      clip-path: polygon(0 35%, 100% 5%, 100% 100%, 0% 100%);
+    }
+    50% {
+      clip-path: polygon(0 45%, 100% -5%, 100% 100%, 0% 100%);
+    }
+    75% {
+      clip-path: polygon(0 35%, 100% 5%, 100% 100%, 0% 100%);
+    }
+  }
+  
+  /* より滑らかな波の効果 - グラデーションオーバーレイ */
+  .overlay-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 30%,
+      rgba(255, 255, 255, 0.7) 60%,
       rgba(255, 255, 255, 1) 100%
     );
-    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
-    z-index: 2;
+    animation: waveGradient 12s ease-in-out infinite;
+  }
+  
+  @keyframes waveGradient {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
   }
 
-  .navbar {
-    position: relative;
-    z-index: 10;
-    padding: 0;
-    width: 100%;
-  }
-
-  .navbar-content {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 20px;
-  }
-
-  .navbar-content > :first-child {
-    justify-self: start;
-  }
-
-  .navbar-content > .logo {
-    justify-self: center;
-    flex: none;
-  }
-
-  .navbar-content > :last-child {
-    justify-self: end;
-  }
-
-  .menu-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
-    background: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: "Noto Serif JP", "Shippori Mincho", "Meiryo UI",
-      "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #12161d;
-  }
-
-  .logo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo-image {
-    height: var(--logo-nav-height, 40px);
-    width: auto;
-    max-width: 180px;
-    object-fit: contain;
-    /* 白色背景を透過させる - darkenモードで白色を透明化 */
-    mix-blend-mode: darken;
-    filter: contrast(1.05) brightness(1.02);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 24px;
-  }
-
-  .nav-links a {
-    font-family: "Noto Serif JP", "Shippori Mincho", "Meiryo UI",
-      "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
-  }
 
   .hero-content {
     position: relative;
@@ -195,22 +124,23 @@
   }
 
   .hero-title {
-    font-family: "Noto Serif JP", "Shippori Mincho", "Meiryo UI",
-      "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-family: var(--font-family-serif, 'Noto Serif JP', 'Yu Mincho', '游明朝', serif);
     font-size: clamp(32px, 8vw, 72px);
     font-weight: 500;
-    line-height: 1.11;
-    letter-spacing: -0.025em;
+    line-height: var(--line-height-tight, 1.4);
+    letter-spacing: var(--letter-spacing-heading-large, 0.1em);
     max-width: 90%;
+    color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   }
 
   .hero-subtitle {
-    font-family: "Noto Serif JP", "Shippori Mincho", "Meiryo UI",
-      "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-family: var(--font-family-serif, 'Noto Serif JP', 'Yu Mincho', '游明朝', serif);
     font-size: clamp(16px, 2.5vw, 18px);
     font-weight: 400;
-    line-height: 1.44;
+    line-height: var(--line-height-relaxed, 1.8);
+    letter-spacing: var(--letter-spacing-body-wide, 0.05em);
+    color: white;
     opacity: 1;
     max-width: 90%;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
@@ -237,10 +167,7 @@
   @media (max-width: 1024px) {
     .hero-section {
       background-attachment: scroll;
-    }
-
-    .navbar-content {
-      padding: 16px;
+      padding-top: 60px;
     }
   }
 
@@ -248,25 +175,7 @@
     .hero-section {
       min-height: 100vh;
       background-attachment: scroll;
-    }
-
-    .navbar-content {
-      padding: 12px 16px;
-      gap: 0;
-    }
-
-    .menu-button {
-      padding: 8px 14px;
-      font-size: 14px;
-    }
-
-    .nav-links {
-      display: none;
-    }
-
-    .logo-image {
-      height: calc(var(--logo-nav-height, 40px) * 0.85);
-      max-width: 140px;
+      padding-top: 50px;
     }
 
     .hero-content {

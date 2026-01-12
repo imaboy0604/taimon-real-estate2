@@ -1,0 +1,122 @@
+/* ============================================
+   デザイントークン - ベガハウス風デザインシステム
+   ============================================ */
+
+:root {
+  /* ============================================
+     カラーパレット
+     ============================================ */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #FAFAFA;
+  --color-bg-tertiary: #F7F7F7;
+  
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #61656E;
+  --color-text-light: #999999;
+  
+  --color-accent-subtle: #8B7355;
+  --color-accent-grey: #6B6B6B;
+  --color-border: #E5E5E5;
+  --color-border-light: #F0F0F0;
+  
+  /* ============================================
+     タイポグラフィ - 明朝体メイン
+     ============================================ */
+  /* メインフォント（明朝体） */
+  --font-family-serif: 'Noto Serif JP', 'Yu Mincho', '游明朝', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+  
+  /* サブフォント（ゴシック体 - 本文用） */
+  --font-family-sans: 'Noto Sans JP', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  
+  /* デフォルトフォント（明朝体を主役に） */
+  --font-family-base: var(--font-family-serif);
+  
+  /* フォントサイズ */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 24px;
+  --font-size-xl: 32px;
+  --font-size-2xl: 40px;
+  --font-size-3xl: 48px;
+  
+  /* 行間 */
+  --line-height-tight: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+  --line-height-loose: 2.0;
+  
+  /* 字間（letter-spacing）- 高級感を出す */
+  --letter-spacing-tight: 0.02em;
+  --letter-spacing-normal: 0.05em;
+  --letter-spacing-wide: 0.1em;
+  --letter-spacing-wider: 0.15em;
+  
+  /* 見出しの字間 */
+  --letter-spacing-heading: 0.05em;
+  --letter-spacing-heading-large: 0.1em;
+  
+  /* 本文の字間 */
+  --letter-spacing-body: 0.02em;
+  --letter-spacing-body-wide: 0.05em;
+  
+  /* 縦書きテキストの字間 */
+  --letter-spacing-vertical: 0.1em;
+  --letter-spacing-vertical-wide: 0.15em;
+  
+  /* ============================================
+     スペーシングシステム（8px基準のグリッド）
+     ============================================ */
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-12: 96px;
+  --spacing-16: 128px;
+  
+  /* セクション間の余白 */
+  --spacing-section: var(--spacing-12); /* 96px */
+  --spacing-section-large: var(--spacing-16); /* 128px */
+  
+  /* 要素間の余白 */
+  --spacing-element: var(--spacing-3); /* 24px */
+  --spacing-element-large: var(--spacing-6); /* 48px */
+  
+  /* コンテナのパディング */
+  --padding-container: var(--spacing-4); /* 32px */
+  --padding-container-large: var(--spacing-6); /* 48px */
+  
+  /* ============================================
+     ブレークポイント
+     ============================================ */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1440px;
+  
+  /* ============================================
+     トランジション
+     ============================================ */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* ============================================
+     影とエフェクト
+     ============================================ */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 8px 24px rgba(0, 0, 0, 0.12);
+  
+  /* ============================================
+     ボーダー
+     ============================================ */
+  --border-width: 1px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+}
