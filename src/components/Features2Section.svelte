@@ -1,16 +1,16 @@
 <script>
   const features = [
     {
-      title: 'Strategic Location',
-      description: 'Cluster housing perumnas is located in an area that is easily accessible from various directions. You can reach the city center, airport, train station, bus terminal, and other important places easily and quickly.'
+      title: '立地の良さ',
+      description: 'タイモン不動産の物件は、各方面からアクセスしやすい立地にあります。都心、空港、駅、バスターミナルなど、重要な場所へ簡単かつ迅速にアクセスできます。'
     },
     {
-      title: 'Modern Design',
-      description: 'Cluster housing perumnas has a modern and elegant house design. You can choose the type of house that suits your taste and needs, ranging from type 36 to type 120.'
+      title: 'モダンデザイン',
+      description: 'タイモン不動産は、モダンで洗練された住まいのデザインを提供しています。お客様の好みやニーズに合わせて、36㎡タイプから120㎡タイプまで、様々なタイプからお選びいただけます。'
     },
     {
-      title: 'Guaranteed Security',
-      description: 'Cluster housing perumnas has an integrated security system. Each cluster is equipped with a fence, gate, and guard post that are monitored by professional security officers. In addition, each house is also equipped with a fire alarm and CCTV.'
+      title: 'セキュリティ',
+      description: 'タイモン不動産は、統合セキュリティシステムを備えています。各物件にはフェンス、ゲート、警備員が常駐する警備室が設置されており、プロの警備員が監視しています。さらに、各住戸には火災報知器と防犯カメラも完備されています。'
     }
   ];
 </script>
@@ -30,11 +30,28 @@
 
 <style>
   .features2-section {
-    background-color: #FFFFFF;
+    position: relative;
+    background: url('/images/gallery-3.jpg') center/cover;
     padding: 80px 80px 120px 680px;
+    overflow: hidden;
+    clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);
+    margin-top: -50px;
+  }
+
+  .features2-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.82) 100%);
+    z-index: 0;
   }
 
   .container {
+    position: relative;
+    z-index: 1;
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -52,7 +69,7 @@
   }
 
   .feature-title {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 24px;
     font-weight: 500;
     line-height: 1.33;
@@ -60,7 +77,7 @@
   }
 
   .feature-description {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.44;
@@ -76,6 +93,8 @@
   @media (max-width: 768px) {
     .features2-section {
       padding: 60px 20px;
+      clip-path: polygon(0 0%, 100% 5%, 100% 95%, 0% 100%);
+      margin-top: -30px;
     }
 
     .features-grid {

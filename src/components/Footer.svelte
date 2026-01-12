@@ -5,44 +5,44 @@
         <div class="logo-section">
           <div class="logo">
             <svg width="137" height="32" viewBox="0 0 137 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="22" font-family="Inter Display" font-size="24" font-weight="500" fill="#12161D">タイモン不動産</text>
+              <text x="0" y="22" font-family="Shippori Mincho, Meiryo UI, Hiragino Kaku Gothic ProN, Hiragino Sans" font-size="24" font-weight="500" fill="#12161D">タイモン不動産</text>
             </svg>
           </div>
           <p class="tagline">
-            More Comfortable.<br />
-            More Classy.
+            より快適に。<br />
+            より上質に。
           </p>
         </div>
       </div>
 
       <div class="links-section">
         <div class="links-column">
-          <h3 class="column-title">Product</h3>
+          <h3 class="column-title">サービス</h3>
           <div class="links">
-            <a href="#features">Features</a>
-            <a href="#integrations">Integrations</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#features">物件紹介</a>
+            <a href="#integrations">資金計画</a>
+            <a href="#pricing">価格情報</a>
           </div>
         </div>
 
         <div class="links-column">
-          <h3 class="column-title">Company</h3>
+          <h3 class="column-title">会社情報</h3>
           <div class="links">
-            <a href="#about">About us</a>
-            <a href="#blog">Blog</a>
-            <a href="#careers">Careers</a>
-            <a href="#customers">Customers</a>
-            <a href="#brand">Brand</a>
+            <a href="#about">私たちについて</a>
+            <a href="#blog">お知らせ</a>
+            <a href="#careers">採用情報</a>
+            <a href="#customers">お客様の声</a>
+            <a href="#brand">ブランド</a>
           </div>
         </div>
 
         <div class="links-column">
-          <h3 class="column-title">Resources</h3>
+          <h3 class="column-title">その他</h3>
           <div class="links">
-            <a href="#community">Community</a>
-            <a href="#contact">Contact</a>
-            <a href="#dpa">DPA</a>
-            <a href="#terms">Terms of service</a>
+            <a href="#community">コミュニティ</a>
+            <a href="#contact">お問い合わせ</a>
+            <a href="#dpa">個人情報保護</a>
+            <a href="#terms">利用規約</a>
           </div>
         </div>
       </div>
@@ -51,12 +51,12 @@
     <div class="divider"></div>
 
     <div class="footer-bottom">
-      <p class="copyright">© 2022 Perumnas. All rights reserved</p>
+      <p class="copyright">© 2024 タイモン不動産. All rights reserved</p>
       <div class="legal-links">
-        <a href="#terms">Terms of Service</a>
-        <a href="#policy">Policy service</a>
-        <a href="#cookie">Cookie Policy</a>
-        <a href="#partners">Partners</a>
+        <a href="#terms">利用規約</a>
+        <a href="#policy">プライバシーポリシー</a>
+        <a href="#cookie">Cookieポリシー</a>
+        <a href="#partners">パートナー</a>
       </div>
     </div>
   </div>
@@ -64,11 +64,28 @@
 
 <style>
   .footer-section {
-    background-color: #FAFAFB;
+    position: relative;
+    background: url('/images/gallery-3.jpg') center/cover;
     padding: 80px 80px 40px;
+    overflow: hidden;
+    clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 100%);
+    margin-top: -50px;
+  }
+
+  .footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(250, 250, 251, 0.95) 0%, rgba(250, 250, 251, 0.98) 100%);
+    z-index: 0;
   }
 
   .container {
+    position: relative;
+    z-index: 1;
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -92,7 +109,7 @@
   }
 
   .tagline {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.44;
@@ -112,7 +129,7 @@
   }
 
   .column-title {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.44;
@@ -126,7 +143,7 @@
   }
 
   .links a {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: #61656E;
@@ -153,7 +170,7 @@
   }
 
   .copyright {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #61656E;
@@ -166,7 +183,7 @@
   }
 
   .legal-links a {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #61656E;
@@ -192,6 +209,8 @@
   @media (max-width: 768px) {
     .footer-section {
       padding: 60px 20px 20px;
+      clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0% 100%);
+      margin-top: -30px;
     }
 
     .content {

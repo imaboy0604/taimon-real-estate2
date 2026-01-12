@@ -2,16 +2,16 @@
   <div class="container">
     <div class="content">
       <div class="text-content">
-        <h2 class="title">Find Your Dream<br />Home Here</h2>
+        <h2 class="title">理想の住まいを<br />ここで見つける</h2>
         <p class="description">
-          You can see for yourself how the Perumnas cluster housing offers beautiful and comfortable housing for you and your family. See photos of the house, environment and facilities we provide here.
+          タイモン不動産が、あなたとご家族のために美しく快適な住まいを提供する様子を、ぜひご覧ください。物件、環境、そして私たちが提供する施設の写真をご覧いただけます。
         </p>
       </div>
       
       <div class="image-content">
         <img 
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1280&h=1111&fit=crop" 
-          alt="Dream home showcase"
+          src="/images/dream-home.jpg" 
+          alt="理想の住まい"
           class="main-image"
         />
       </div>
@@ -21,11 +21,28 @@
 
 <style>
   .features3-section {
-    background-color: #FFFFFF;
+    position: relative;
+    background: url('/images/gallery-1.jpg') center/cover;
     padding: 120px 80px;
+    overflow: hidden;
+    clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);
+    margin-top: -50px;
+  }
+
+  .features3-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.85) 100%);
+    z-index: 0;
   }
 
   .container {
+    position: relative;
+    z-index: 1;
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -44,7 +61,7 @@
   }
 
   .title {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 44px;
     font-weight: 500;
     line-height: 1.18;
@@ -52,7 +69,7 @@
   }
 
   .description {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.44;
@@ -75,6 +92,8 @@
   @media (max-width: 768px) {
     .features3-section {
       padding: 60px 20px;
+      clip-path: polygon(0 0%, 100% 5%, 100% 95%, 0% 100%);
+      margin-top: -30px;
     }
 
     .content {

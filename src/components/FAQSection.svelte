@@ -3,20 +3,20 @@
 
   const faqs = [
     {
-      question: 'What is cluster housing perumnas?',
-      answer: 'Cluster housing perumnas is a housing concept that consists of several houses in a gated cluster. Cluster housing perumnas offers comfortable, secure, and affordable housing with various complete and modern facilities.'
+      question: 'タイモン不動産とは何ですか？',
+      answer: 'タイモン不動産は、ゲート付きの物件群で構成される住まいのコンセプトです。快適で安全、そして手頃な価格の住まいを、様々な充実したモダンな施設と共に提供しています。'
     },
     {
-      question: 'Where is the location of cluster housing perumnas?',
-      answer: 'Cluster housing perumnas is strategically located in easily accessible areas with good connectivity to city centers, airports, and other important facilities.'
+      question: 'タイモン不動産の物件はどこにありますか？',
+      answer: 'タイモン不動産の物件は、都心、空港、その他の重要な施設へのアクセスが容易な、戦略的に選ばれた立地にあります。'
     },
     {
-      question: 'How much are the prices and types of houses in cluster housing perumnas?',
-      answer: 'Cluster housing perumnas offers various house types ranging from type 36 to type 120. Prices vary depending on the type and location. Please contact us for detailed pricing information.'
+      question: 'タイモン不動産の物件の価格とタイプはどのくらいですか？',
+      answer: 'タイモン不動産は、36㎡タイプから120㎡タイプまで、様々なタイプの物件を提供しています。価格はタイプと立地によって異なります。詳細な価格情報については、お気軽にお問い合わせください。'
     },
     {
-      question: 'What are the facilities provided in cluster housing perumnas?',
-      answer: 'Cluster housing perumnas provides various facilities including playgrounds, sports fields, shopping centers, schools, security systems, and other modern amenities.'
+      question: 'タイモン不動産ではどのような施設が提供されていますか？',
+      answer: 'タイモン不動産では、遊び場、スポーツ施設、ショッピングセンター、学校、セキュリティシステムなど、様々なモダンな施設を提供しています。'
     }
   ];
 
@@ -29,10 +29,10 @@
   <div class="container">
     <div class="content">
       <div class="header">
-        <h2 class="title">Frequently Asked Questions</h2>
+        <h2 class="title">よくある質問</h2>
         <p class="subtitle">
-          If there are question you want to ask.<br />
-          We will answer all your question.
+          ご質問がございましたら、<br />
+          お気軽にお問い合わせください。
         </p>
       </div>
 
@@ -70,11 +70,28 @@
 
 <style>
   .faq-section {
-    background-color: #FFFFFF;
+    position: relative;
+    background: url('/images/gallery-2.jpg') center/cover;
     padding: 120px 80px;
+    overflow: hidden;
+    clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 90%);
+    margin-top: -50px;
+  }
+
+  .faq-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.88) 100%);
+    z-index: 0;
   }
 
   .container {
+    position: relative;
+    z-index: 1;
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -93,7 +110,7 @@
   }
 
   .title {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 44px;
     font-weight: 500;
     line-height: 1.18;
@@ -101,7 +118,7 @@
   }
 
   .subtitle {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.44;
@@ -138,7 +155,7 @@
     border: none;
     text-align: left;
     cursor: pointer;
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 24px;
     font-weight: 500;
     line-height: 1.33;
@@ -155,7 +172,7 @@
   }
 
   .faq-answer p {
-    font-family: 'Inter Display', sans-serif;
+    font-family: 'Shippori Mincho', 'Meiryo UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.44;
@@ -176,6 +193,8 @@
   @media (max-width: 768px) {
     .faq-section {
       padding: 60px 20px;
+      clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0% 95%);
+      margin-top: -30px;
     }
 
     .content {
